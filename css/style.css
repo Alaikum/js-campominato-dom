@@ -112,3 +112,9 @@ footer>p{
     padding-left: 1rem;
     
 }
+
+.square.boom{
+    background-color: red;
+    cursor: no-drop;
+
+}
