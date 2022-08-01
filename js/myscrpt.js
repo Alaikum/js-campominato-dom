@@ -13,7 +13,7 @@ buttonElement.addEventListener('click', function () {
     let dimensioneGriglia = document.getElementById('dimensione');
     dimensioneGriglia = dimensioneGriglia.value
 
-    let punteggio= 0
+    let punteggio = 0
 
 
 
@@ -90,6 +90,10 @@ buttonElement.addEventListener('click', function () {
         } else {
             square.classList.toggle('clicked')
             punteggio++
+            if (punteggio === (dimensioneGriglia ** 2 - 16)) {
+                gameOver()
+            }
+            console.log(punteggio, dimensioneGriglia ** 2 - 16)
         }
 
 
