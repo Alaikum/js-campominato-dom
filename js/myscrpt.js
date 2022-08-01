@@ -63,6 +63,7 @@ buttonElement.addEventListener('click', function () {
             tabellone.append(cella)
 
 
+
         }
         return div.innerHTML
     }
@@ -85,8 +86,13 @@ buttonElement.addEventListener('click', function () {
         const square = this
         console.log('Hai cliccato la cella n' + square.innerHTML)
         if (bombe.includes(parseInt(square.innerHTML))) {
-            square.classList.toggle('boom')
+            square.classList.add('boom')
             gameOver()
+            scopriBombe()
+
+
+
+
         } else {
             square.classList.toggle('clicked')
             punteggio++
@@ -124,10 +130,30 @@ buttonElement.addEventListener('click', function () {
 
 
     function gameOver() {
+
         gameOverEl.innerHTML = ''
         gameOverEl.style.zIndex = `99`
         gameOverEl.innerHTML += "<br>La tua partita è conclusa:<br>il tuo punteggio totale è: <br> " + punteggio
     }
+
+
+
+    function scopriBombe() {
+
+        let cells = document.querySelectorAll('.square')
+        for (let i = 0; i < bombe.length; i++) {
+            const bomb = bombe[i]
+
+            const cellBomb = cells[bomb]
+
+            cellBomb.classList.add('boom')
+
+            // console.log(bombs, cells, bomb,cellBomb)
+        }
+    }
+
+
+
 
     //   console.log(getRandomInt(dimensioneGriglia))
 })
