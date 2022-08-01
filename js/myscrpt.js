@@ -4,6 +4,7 @@ console.log('Abbinato')
 // dimensione della griglia 
 
 const buttonElement = document.getElementById('button')
+const gameOverEl = document.getElementById('game__over')
 
 buttonElement.addEventListener('click', function () {
 
@@ -11,6 +12,8 @@ buttonElement.addEventListener('click', function () {
 
     let dimensioneGriglia = document.getElementById('dimensione');
     dimensioneGriglia = dimensioneGriglia.value
+
+    let punteggio= 0
 
 
 
@@ -34,7 +37,9 @@ buttonElement.addEventListener('click', function () {
 
     console.log(dimensioneGriglia)
     // reset dello schermo 
+    gameOverEl.style.zIndex = `-1`
     tabelloneElement.innerHTML = ''
+
     generaGriglia(dimensioneGriglia, tabelloneElement)
     let bombe = creaBombe(dimensioneGriglia)
     console.log(bombe)
@@ -81,8 +86,10 @@ buttonElement.addEventListener('click', function () {
         console.log('Hai cliccato la cella n' + square.innerHTML)
         if (bombe.includes(parseInt(square.innerHTML))) {
             square.classList.toggle('boom')
+            gameOver()
         } else {
             square.classList.toggle('clicked')
+            punteggio++
         }
 
 
@@ -109,6 +116,13 @@ buttonElement.addEventListener('click', function () {
     // funzione crea numeri casuali 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max ** 2 + 1);
+    }
+
+
+    function gameOver() {
+        gameOverEl.innerHTML = ''
+        gameOverEl.style.zIndex = `99`
+        gameOverEl.innerHTML += "<br>La tua partita è conclusa:<br>il tuo punteggio totale è: <br> " + punteggio
     }
 
     //   console.log(getRandomInt(dimensioneGriglia))

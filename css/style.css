@@ -1,65 +1,64 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-body{
-    
+body {
+
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   
+
 }
 
-.nav{
+.nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 0 0 1rem;
 }
 
-.ul__header{
+.ul__header {
     display: flex;
     align-items: center;
     margin-left: auto;
     padding-right: 1rem;
     gap: 1rem;
-  
+
 }
 
-.ul__header *{
+.ul__header * {
     font-size: 1.5rem;
 }
 
-.ul__header>li>select{
+.ul__header>li>select {
     width: 12rem;
-    
+
 }
 
-.ul__header>li>button{
-width: 7rem;
-border-radius: 10px;
+.ul__header>li>button {
+    width: 7rem;
+    border-radius: 10px;
 }
 
-main{
+main {
 
-display: flex;
-    justify-content: center;
-    align-items: center;
+ 
     background-color: aquamarine;
+    position: relative;
 }
 
-.tabellone__facile{
+.tabellone__facile {
     flex-basis: 100%;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -69,7 +68,7 @@ display: flex;
     margin: 0 auto;
 }
 
-.tabellone__medio{
+.tabellone__medio {
     flex-basis: 100%;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -79,7 +78,7 @@ display: flex;
     margin: 0 auto;
 }
 
-.tabellone__difficile{
+.tabellone__difficile {
     flex-basis: 100%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -89,7 +88,7 @@ display: flex;
     margin: 0 auto;
 }
 
-.square{
+.square {
     aspect-ratio: 1/1;
     border: 2px solid black;
     display: flex;
@@ -98,23 +97,37 @@ display: flex;
     color: white;
     font-size: 2rem;
     cursor: pointer;
-   
+
 }
 
-.square.clicked{
+.square.clicked {
     background-color: cornflowerblue;
     cursor: no-drop;
 }
 
 
-footer>p{
+footer>p {
     font-size: 1.5rem;
     padding-left: 1rem;
-    
+
 }
 
-.square.boom{
+.square.boom {
     background-color: red;
     cursor: no-drop;
 
+}
+
+#game__over{
+    text-align: center;
+    font-size: 4rem;
+    color:  yellow;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
