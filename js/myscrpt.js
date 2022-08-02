@@ -94,7 +94,7 @@ buttonElement.addEventListener('click', function () {
 
 
         } else {
-            square.classList.toggle('clicked')
+            square.classList.add('clicked')
             punteggio++
             if (punteggio === (dimensioneGriglia ** 2 - 16)) {
                 gameOver()
@@ -143,8 +143,8 @@ buttonElement.addEventListener('click', function () {
         let cells = document.querySelectorAll('.square')
         for (let i = 0; i < bombe.length; i++) {
             const bomb = bombe[i]
-
-            const cellBomb = cells[bomb]
+            console.log(bomb)
+            const cellBomb = cells[bomb-1]
 
             cellBomb.classList.add('boom')
 
